@@ -34,13 +34,13 @@ Download BERT scripts from its github.
 $ git clone https://github.com/google-research/bert
 ```
 
-Then, move our 'my-run_squad.py' to the 'bert' directory. Our modification to the original run_squad.py is minimal. We simply add a code to output start and end position, which are the indexes to BERT tokens. You can check the difference by `diff run_squad.py my-run_squad.py`.
+Then, move our `my-run_squad.py` to the `bert` directory. Our modification to the original `run_squad.py` is minimal. We simply add a code to output start and end position, which are the indexes to BERT tokens. You can check the difference by `diff run_squad.py my-run_squad.py`.
 
 ```
 $ cp -p my-run_squad.py ./bert
 ```
 
-Download 'BERT-Base, Multilingual Cased (New, recommended)' and unzip it.
+Download `BERT-Base, Multilingual Cased (New, recommended)` and unzip it.
 
 ```
 $ wget https://storage.googleapis.com/bert_models/2018_11_23/multi_cased_L-12_H-768_A-12.zip
@@ -126,6 +126,7 @@ $ head -5 kftt_devtest.moses.bidi_th
 1-2 1-13 4-4 5-4 6-4 7-5 8-6 9-8 10-7 12-9 12-10 13-12 14-13 15-14 15-15 16-16 17-17
 ```
 
+## Yet Another Software for Cross-Language Span Prediction
 A different implementation for cross-language span prediction using huggingface transformers is available in the software described in "[SpanAlign: Sentence Alignment Method based on Cross-Language Span Prediction and ILP](https://www.aclweb.org/anthology/2020.coling-main.418/)" published at COLING-2020.
 
 ## License
