@@ -130,5 +130,5 @@ A different implementation for cross-language span prediction using huggingface 
 
 ## License
 
-This data is released under the NTT License, see `LICENSE.txt`.
+This software is released under the NTT License, see `LICENSE.txt`.
 
