@@ -12,6 +12,10 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
+# modified Thu Dec  3 10:07:21 2020 by Masaaki Nagata
+# see modifications by `diff my-run_squad.py run_squad.py`
+
 """Run BERT on SQuAD 1.1 and SQuAD 2.0."""
 
 from __future__ import absolute_import
@@ -908,8 +912,8 @@ def write_predictions(all_examples, all_features, all_results, n_best_size,
     for (i, entry) in enumerate(nbest):
       output = collections.OrderedDict()
       output["text"] = entry.text
-      output["start"] = entry.start  ## add 2019/02/07
-      output["end"] = entry.end      ## add 2019/02/07
+      output["start"] = entry.start  ## added
+      output["end"] = entry.end      ## added
       output["probability"] = probs[i]
       output["start_logit"] = entry.start_logit
       output["end_logit"] = entry.end_logit
