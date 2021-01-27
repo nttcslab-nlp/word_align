@@ -127,7 +127,34 @@ $ head -5 kftt_devtest.moses.bidi_th
 ```
 
 ## Yet Another Software for Cross-Language Span Prediction
-A different implementation for cross-language span prediction using huggingface transformers is available in the software described in "[SpanAlign: Sentence Alignment Method based on Cross-Language Span Prediction and ILP](https://www.aclweb.org/anthology/2020.coling-main.418/)" published at COLING-2020.
+A different implementation for cross-language span prediction using huggingface transformers is available in the software described in "[SpanAlign: Sentence Alignment Method based on Cross-Language Span Prediction and ILP](https://www.aclweb.org/anthology/2020.coling-main.418/)" published at COLING-2020.#
+
+## Data Preprocessing Scripts for the Chinese-English Experiment
+
+First, `make_ldc_data.sh`  extracts Chinese character-tokenized bitexts, raw texts, and their word alignments from the GALE Chinese-English Parallel Aligned Treebank (LDC2015T05). It calls `convert_to_moses.py` to convert the LDC's word alignment data to the Moses format. It also removes mismatched bitexts, time stamps, etc.
+
+```
+$ make_ldc_data.sh
+```
+
+Then, `make_ldc_squad.sh` randomly shuffles the cleaned data to make train/dev/test splits, and converts them to the SQuAD v2.0 format using `wa2span_squad.py`.
+
+```
+$ make_ldc_squad.sh
+```
+
+You can check the number of data in the train/dev/test splits by counting the number of lines in  `.txt` files.
+
+```
+$ wc -l ./ldc/zhen_*.txt
+    610 ./ldc/zhen_dev.txt
+    610 ./ldc/zhen_test.txt
+   4879 ./ldc/zhen_train0.txt
+    300 ./ldc/zhen_train1.txt
+    600 ./ldc/zhen_train2.txt
+   1200 ./ldc/zhen_train3.txt
+   2400 ./ldc/zhen_train4.txt
+```
 
 ## License
 
